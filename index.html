@@ -1,14 +1,428 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Updated title of the page -->
     <title>Nopales de Amarme 🌵✨</title>
-    ...
-    <!-- (Contenido completo omitido por brevedad, pero en el código real incluiríamos todo el HTML) -->
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e6ffe6; /* Verde claro */
+            color: #333;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #66bb6a; /* Verde nopal */
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid #388e3c; /* Verde oscuro */
+        }
+        header h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        nav {
+            background-color: #81c784; /* Verde más claro */
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1.2em;
+            transition: color 0.3s ease;
+        }
+        nav a:hover {
+            color: #dcedc8; /* Verde muy claro */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px 0;
+        }
+        section {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 2px solid #a5d6a7; /* Borde verde claro */
+        }
+        h2 {
+            color: #4caf50; /* Verde medio */
+            font-size: 2.2em;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .intro-image {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        .benefit-item {
+            background-color: #e8f5e9; /* Verde muy pálido */
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px dashed #a5d6a7;
+        }
+        .benefit-item img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .recipe-card {
+            background-color: #f1f8e9; /* Verde casi blanco */
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border: 1px solid #c8e6c9;
+        }
+        .recipe-card h3 {
+            color: #388e3c;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+        .recipe-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        .recipe-card ol, .recipe-card ul {
+            padding-left: 25px;
+        }
+        .recipe-card li {
+            margin-bottom: 8px;
+        }
+        form {
+            background-color: #f9fbe7; /* Amarillo muy pálido */
+            padding: 25px;
+            border-radius: 10px;
+            border: 2px solid #dcedc8;
+            margin-top: 20px;
+        }
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #558b2f; /* Verde oliva */
+        }
+        form input[type="text"],
+        form input[type="number"],
+        form select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #c5e1a5;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        form input[type="radio"],
+        form input[type="checkbox"] {
+            margin-right: 8px;
+        }
+        form button {
+            background-color: #4caf50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        form button:hover {
+            background-color: #388e3c;
+        }
+        footer {
+            background-color: #66bb6a;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+            border-top: 5px solid #388e3c;
+        }
+        /* Estilos para el mensaje de confirmación */
+        .message-box {
+            display: none; /* Oculto por defecto */
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #dcedc8; /* Verde muy claro */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-align: center;
+            font-size: 1.5em;
+            color: #388e3c;
+            border: 3px solid #66bb6a;
+        }
+        .message-box button {
+            background-color: #4caf50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        .message-box button:hover {
+            background-color: #388e3c;
+        }
+    </style>
 </head>
 <body>
-    ...
+    <header>
+        <!-- Updated main heading of the page -->
+        <h1>NOPALES DE AMARME 🌵✨</h1>
+        <p>¡Descubre los superpoderes de esta planta increíble!</p>
+    </header>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#beneficios">Beneficios</a>
+        <a href="#snacks">Snacks Divertidos</a>
+        <a href="#recetas">Recetas</a>
+        <a href="#historia">Historia del Nopal</a> <!-- New navigation link -->
+        <a href="#encuesta">Tu Opinión</a>
+    </nav>
+
+    <div class="container">
+        <section id="inicio">
+            <h2>¡Hola, pequeños exploradores del nopal! 👋</h2>
+            <!-- Image of a friendly nopal -->
+            <img src="https://placehold.co/600x300/66bb6a/ffffff?text=Nopal+Amigable" alt="Nopal sonriendo" class="intro-image">
+            <p>¿Conocen al **nopal**? Es una planta muy especial que vive en lugares como los desiertos, ¡pero no es un cactus cualquiera! Sus pencas son como raquetas gigantes y ¡están llenas de cosas buenas para nuestro cuerpo! En esta página vamos a descubrir por qué el nopal es un verdadero **súper alimento** y cómo podemos comerlo de formas súper divertidas.</p>
+        </section>
+
+        <section id="beneficios">
+            <h2>Los Súper Poderes del Nopal 💪</h2>
+            <p>El nopal es como un héroe para nuestra salud. ¡Mira todos los beneficios que nos da!</p>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <!-- Image of a happy stomach icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Panza" alt="Estómago feliz">
+                    <p>💚 **Panza Feliz:** Ayuda a que tu pancita funcione muy bien y te sientas ligero.</p>
+                </div>
+                <div class="benefit-item">
+                    <!-- Image of a strong bone icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Huesos" alt="Hueso fuerte">
+                    <p>🦴 **Huesos Fuertes:** Tiene calcio, ¡como la leche, para que tus huesos crezcan sanos y fuertes!</p>
+                </div>
+                <div class="benefit-item">
+                    <!-- Image of a child with energy icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Energia" alt="Niño con energía">
+                    <p>⚡ **Mucha Energía:** Te da energía para correr, jugar y aprender todo el día.</p>
+                </div>
+                <div class="benefit-item">
+                    <!-- Image of a healthy heart icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Corazon" alt="Corazón sano">
+                    <p>❤️ **Corazón Contento:** Cuida tu corazón para que siempre esté latiendo con mucha fuerza.</p>
+                </div>
+                <div class="benefit-item">
+                    <!-- Image of a shield icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Defensas" alt="Escudo de defensa">
+                    <p>🛡️ **Súper Defensas:** Te ayuda a que no te enfermes tan seguido, ¡como un escudo protector!</p>
+                </div>
+                <div class="benefit-item">
+                    <!-- Image of a sugar level icon -->
+                    <img src="https://placehold.co/80x80/81c784/ffffff?text=Azucar" alt="Nivel de azúcar">
+                    <p>🍬 **Adiós al Azúcar Extra:** Ayuda a que el azúcar en tu cuerpo esté en su punto justo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="snacks">
+            <h2>Snacks Divertidos con Nopal 🥳</h2>
+            <p>¿Sabías que el nopal se puede convertir en cosas deliciosas? ¡Mira estas ideas!</p>
+            <ul>
+                <li>**Chips de Nopal Crujientes:** Como papitas, ¡pero de nopal! Se hornean hasta que queden súper crujientes.</li>
+                <li>**Gelatina de Nopal Mágica:** Sí, ¡gelatina verde! Con un saborcito especial y muy refrescante.</li>
+                <li>**Paletas Heladas de Nopal y Fruta:** Ideales para el calor, ¡súper ricas y nutritivas!</li>
+                <li>**Tacos Dorados de Nopal:** Rellenos de nopal guisado, ¡perfectos para la cena!</li>
+                <li>**¡Gomitas de Nopal!** (¡Nuestra favorita!) Sigue leyendo para la receta.</li>
+            </ul>
+        </section>
+
+        <section id="recetas">
+            <h2>¡Manos a la Obra! Recetas con Nopal 🧑‍🍳</h2>
+            <div class="recipe-card">
+                <h3>Gomitas Mágicas de Nopal y Fruta 🍓🥭</h3>
+                <!-- Image of nopal gummies -->
+                <img src="https://placehold.co/500x280/dcedc8/388e3c?text=Gomitas+de+Nopal" alt="Gomitas de nopal de colores">
+                <p>¡Prepárate para hacer unas gomitas deliciosas y saludables! Pide ayuda a un adulto.</p>
+                <h4>Ingredientes:</h4>
+                <ul>
+                    <li>1 penca de nopal pequeña (bien limpia y sin espinas)</li>
+                    <li>1 taza de fruta picada (fresas, mango, piña, kiwi, ¡lo que más te guste!)</li>
+                    <li>1/2 taza de agua</li>
+                    <li>2 cucharadas de miel de agave o jarabe de maple (o al gusto)</li>
+                    <li>2 sobres (7 gramos cada uno) de grenetina sin sabor (gelatina sin sabor)</li>
+                    <li>Molde para gomitas (pueden ser de hielo)</li>
+                </ul>
+                <h4>Preparación:</h4>
+                <ol>
+                    <li>Pide a un adulto que te ayude a cortar el nopal en trozos pequeños.</li>
+                    <li>En una licuadora, mezcla el nopal picado, la fruta, el agua y la miel. Licúa hasta que quede una mezcla muy suave.</li>
+                    <li>Pasa la mezcla por un colador fino para quitarle cualquier grumo y que quede bien líquida.</li>
+                    <li>En un recipiente pequeño, espolvorea la grenetina sobre 1/4 de taza de la mezcla de nopal fría y deja reposar por 5 minutos para que se hidrate.</li>
+                    <li>Mientras tanto, calienta el resto de la mezcla de nopal en una olla a fuego bajo, sin que hierva.</li>
+                    <li>Agrega la grenetina hidratada a la mezcla caliente y revuelve muy bien hasta que se disuelva por completo.</li>
+                    <li>Con cuidado, vierte la mezcla en tus moldes para gomitas.</li>
+                    <li>Refrigera por al menos 2 horas, o hasta que las gomitas estén firmes.</li>
+                    <li>¡Desmolda con cuidado y a disfrutar de tus gomitas mágicas! ✨</li>
+                </ol>
+            </div>
+
+            <div class="recipe-card">
+                <h3>Agua Fresca de Nopal y Limón 🍋💧</h3>
+                <!-- Image of nopal water with lemon -->
+                <img src="https://placehold.co/500x280/dcedc8/388e3c?text=Agua+de+Nopal" alt="Vaso de agua de nopal con limón">
+                <p>¡Una bebida súper refrescante y llena de energía!</p>
+                <h4>Ingredientes:</h4>
+                <ul>
+                    <li>1 penca de nopal mediana (limpia y sin espinas)</li>
+                    <li>1 litro de agua fría</li>
+                    <li>Jugo de 2 limones</li>
+                    <li>Miel de agave o azúcar al gusto</li>
+                    <li>Hielos</li>
+                </ul>
+                <h4>Preparación:</h4>
+                <ol>
+                    <li>Pide a un adulto que te ayude a cortar el nopal en cubos.</li>
+                    <li>En la licuadora, pon el nopal, medio litro de agua y licúa muy bien hasta que no queden trozos.</li>
+                    <li>Pasa la mezcla por un colador fino para que quede bien lisita.</li>
+                    <li>En una jarra, mezcla el líquido de nopal colado con el resto del agua, el jugo de limón y la miel o azúcar al gusto. Revuelve muy bien.</li>
+                    <li>Agrega hielos y ¡listo! Disfruta de tu agua fresca y nutritiva.</li>
+                </ol>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- New section for Nopal History -->
+        <section id="historia">
+            <h2>La Fascinante Historia del Nopal 🕰️</h2>
+            <p>El nopal no es solo una planta deliciosa, ¡también tiene una historia muy, muy antigua en México! Desde hace miles de años, nuestros ancestros ya lo conocían y lo usaban para comer, para hacer medicinas y hasta para construir. Es tan importante que aparece en nuestro escudo nacional, ¡el águila devorando una serpiente sobre un nopal!</p>
+            <p>El nopal ha sido un alimento básico para los pueblos originarios de México, como los aztecas, quienes lo consideraban un regalo de los dioses. Lo usaban fresco, cocido, y hasta seco para guardarlo por mucho tiempo. ¡Es una planta que ha alimentado a muchas generaciones!</p>
+
+            <h3>El Nopal en Matehuala, San Luis Potosí 💚</h3>
+            <img src="https://placehold.co/600x300/66bb6a/ffffff?text=Nopales+en+Matehuala" alt="Nopales en Matehuala" class="intro-image">
+            <p>En Matehuala, San Luis Potosí, el nopal es ¡súper importante! Aquí el clima es perfecto para que crezca muy fuerte y grande. Los campesinos de Matehuala son expertos en cuidar los nopales. Ellos plantan las "pencas" (que son como las hojas del nopal) en la tierra y con el sol y un poquito de agua, ¡crecen unos nopales enormes y jugosos!</p>
+            <p>En esta región, el nopal se cultiva de forma tradicional, cuidando la tierra y usando métodos que han pasado de generación en generación. Gracias a esto, los nopales de Matehuala son muy famosos por su calidad y sabor. Se usan para hacer dulces, mermeladas, jugos y, por supuesto, ¡para comerlos en muchísimos platillos deliciosos!</p>
+            <p>Así que, cuando comas nopal, recuerda que no solo es rico y saludable, ¡también es parte de una historia increíble y de la tradición de lugares como Matehuala!</p>
+        </section>
+
+        <hr>
+
+        <section id="encuesta">
+            <h2>¡Cuéntanos sobre el Nopal! 🗣️</h2>
+            <p>Queremos saber qué tanto te gusta el nopal y si lo comes seguido. ¡Tus respuestas nos ayudan mucho!</p>
+            <form id="nopalSurveyForm">
+                <label for="nombre">Tu nombre (opcional):</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Tu nombre">
+
+                <label for="edad">¿Cuántos años tienes?</label>
+                <input type="number" id="edad" name="edad" min="4" max="12" required>
+
+                <label>¿Has probado el nopal antes?</label>
+                <input type="radio" id="si_probe" name="probado_nopal" value="si" required>
+                <label for="si_probe">Sí</label><br>
+                <input type="radio" id="no_probe" name="probado_nopal" value="no">
+                <label for="no_probe">No</label><br><br>
+
+                <label>Si lo has probado, ¿en qué forma te gusta más?</label><br>
+                <input type="checkbox" id="tacos" name="forma_nopal" value="tacos">
+                <label for="tacos">En tacos/quesadillas</label><br>
+                <input type="checkbox" id="ensalada" name="forma_nopal" value="ensalada">
+                <label for="ensalada">En ensalada</label><br>
+                <input type="checkbox" id="agua" name="forma_nopal" value="agua">
+                <label for="agua">En agua fresca</label><br>
+                <input type="checkbox" id="gomitas" name="forma_nopal" value="gomitas">
+                <label for="gomitas">En gomitas/snacks</label><br>
+                <input type="checkbox" id="guisado" name="forma_nopal" value="guisado">
+                <label for="guisado">Guisado (con huevo, carne, etc.)</label><br>
+                <input type="checkbox" id="otra" name="forma_nopal" value="otra">
+                <label for="otra">Otra forma:</label>
+                <input type="text" id="otra_especifica" name="otra_forma_especifica" placeholder="¿Cuál?"><br><br>
+
+                <label for="frecuencia">¿Con qué frecuencia comes nopal?</label>
+                <select id="frecuencia" name="frecuencia" required>
+                    <option value="">Selecciona una opción</option>
+                    <option value="nunca">Nunca</option>
+                    <option value="pocas_veces">Pocas veces al año</option>
+                    <option value="una_vez_mes">Una vez al mes</option>
+                    <option value="varias_veces_mes">Varias veces al mes</option>
+                    <option value="una_vez_semana">Una vez a la semana</option>
+                    <option value="varias_veces_semana">Varias veces a la semana</option>
+                </select><br><br>
+
+                <label for="gusto">Del 1 al 5, ¿cuánto te gusta el nopal? (1=No me gusta nada, 5=Me encanta)</label>
+                <input type="range" id="gusto" name="gusto_nopal" min="1" max="5" value="3" oninput="this.nextElementSibling.value=this.value">
+                <output>3</output><br><br>
+
+                <button type="submit">¡Enviar mi opinión!</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>¡Gracias por visitar la página del Nopal Mágico! ✨</p>
+        <!-- Added author's name -->
+        <p>Autora: Julieta Alexandra García Torres</p>
+        <p>&copy; 2025 Exploradores del Nopal. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Message box for confirmation -->
+    <div id="messageBox" class="message-box">
+        <p>¡Gracias por tu opinión, pequeño explorador! 🎉</p>
+        <button onclick="closeMessageBox()">Cerrar</button>
+    </div>
+
+    <script>
+        // Get the form element
+        const nopalSurveyForm = document.getElementById('nopalSurveyForm');
+        // Get the message box element
+        const messageBox = document.getElementById('messageBox');
+
+        // Add an event listener for form submission
+        nopalSurveyForm.addEventListener('submit', function(event) {
+            // Prevent the default form submission behavior (page reload)
+            event.preventDefault();
+
+            // Display the message box
+            messageBox.style.display = 'block';
+
+            // Clear the form fields after submission
+            nopalSurveyForm.reset();
+
+            // Reset the range input output display
+            document.getElementById('gusto').nextElementSibling.value = document.getElementById('gusto').value;
+        });
+
+        // Function to close the message box
+        function closeMessageBox() {
+            messageBox.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
